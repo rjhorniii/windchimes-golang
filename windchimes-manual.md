@@ -28,23 +28,13 @@ go build -o windchimes windchimes.go
 ## Run
 
 ```bash
-# With TiMidity (most common):
-./windchimes | timidity -
-
-# With FluidSynth:
-./windchimes | fluidsynth -a alsa -m alsa-raw -
-
-# Write to hardware MIDI port:
-./windchimes --out /dev/snd/midiC0D0
-
-# Start with a specific preset:
-./windchimes --preset 5 | timidity -
-
-# Override wind speed:
-./windchimes --preset 2 --wind 0.7 | timidity -
+# Start with fluidsynth running in background
+start-windchimes.sh
 
 # List all presets:
 ./windchimes --list-presets
+
+Other outputs (timidity, hardware midi) not tested but should work.
 ```
 
 ## Interactive Controls
