@@ -1,10 +1,29 @@
+# Wind Chimes for Linux (Go)
 
-Simulates real wind-chime pendulum physics — each chime swings under randomized wind gusts using a pink noise source, and notes trigger when two pendulums collide (exactly how real chimes work).
+A Linux reimplementation of **Syntrillium Wind Chimes 1.01** in pure Go, with no external dependencies. Simulates real wind-chime pendulum physics — each chime swings under randomized wind gusts using a pink noise source, and notes trigger when two pendulums collide (exactly how real chimes work).
+
+---
+
+## How It Works
+
+The program:
+1. Simulates **pendulum physics** for each chime — wind applies random forces, gravity restores them
+2. Detects **chime collisions** (when two pendulums swing close together) and fires MIDI notes
+3. Outputs **raw MIDI bytes** to stdout (or a file/device)
+
+## Requirements
+
+- Go 1.18+ 
+- A MIDI synthesizer on Linux, one of:
+  - **TiMidity++**
+  - **FluidSynth**
+  - **Hardware MIDI** 
+
 
 Windchimes outputs raw MIDI bytes to stdout, which are piped to fluidsynth using a Linux virtual midi port.  
 
-## Requirements
-- go
+## Added Requirements when using the windchimes.sh script
+
 - fluidsynth
 - Linux kernel module
   - `snd-virmidi`
