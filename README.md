@@ -22,7 +22,7 @@ The program:
 
 Windchimes outputs raw MIDI bytes to stdout, which are piped to fluidsynth using a Linux virtual midi port.  
 
-## Added Requirements when using the windchimes.sh script
+## Added Requirements when using the start-windchimes.sh script
 
 - fluidsynth
 - Linux kernel module
@@ -41,7 +41,7 @@ Windchimes is controlled by a terminal interface.  It starts running a preset co
 
 The original software required Windows 95 and a SoundBlaster. This one just needs normal Linux alsa or pipewire sound. Windchimes is based upon the original user manual and reviews of the original program.  It is not derived from original code or executable.
 
-Windchimes is a standalone go-lang program.  The bash script `windchimes.sh` needs to be edited to reflect your local installation and setup preferences. In particular these lines near the top need to be localized to reference your chosen location and selection for soundfont and windchimes executable.  You may want to change the choice of virtual midi port.
+Windchimes is a standalone go-lang program.  The bash script `start-windchimes.sh` needs to be edited to reflect your local installation and setup preferences. In particular these lines near the top need to be localized to reference your chosen location and selection for soundfont and windchimes executable.  You may want to change the choice of virtual midi port.
 ```bash
 SOUNDFONT="/home/xxxxx/Downloads/GeneralUser-GS.sf2"
 VIRMIDI_PORT_NAME="Virtual Raw MIDI 0-0"   # adjust if you want a different virmidi port
